@@ -1,0 +1,359 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Arimo", sans-serif;
+    font-size: 16px;
+    background-color: #080b10;
+    color: white;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
+    text-align: left;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sections {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+}
+
+header {
+    grid-area: 1 / 1 / 3 / 2;
+    background-color: #97a2a6;
+}
+
+#appname{
+    gap:10px;
+    align-items: center;
+}
+
+#logo{
+    width:40px;
+    height: 40px;
+}
+
+#info {
+    grid-area: 3 / 1 / 4 / 2;
+    background-color: #97a2a6;
+}
+
+#file-section {
+    background-color: #a7b2b6;
+    border-radius: 10px;
+    padding: 20px;
+    gap:10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#file-section img {
+    width: 80px;
+    height: 80px;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+p{
+    font-size: 16px;
+}
+
+a {
+    display: block;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="password"],
+input[type="file"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #343b43;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+input[type="file"]::file-selector-button {
+    display: none;
+}
+
+#file-input {
+    height: 100%;
+    text-align: center;
+    border: 2px solid #97a2a6;
+}
+button {
+    padding: 10px 20px;
+    width: 100%;
+    background-color: #343b43;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.primary {
+    background-color: #080b10;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Progress Bar */
+#progress-container {
+    background-color: #1b1f22;
+    border: 1px solid #0056b3;
+    border-radius: 100px;
+    width: 100%;
+    height: 25px;
+    margin: 10px 0;
+}
+
+#progress-bar {
+    background-color: #0056b3;
+    height: 100%;
+    text-align: center;
+    color: white;
+    line-height: 25px;
+    width: 0%;
+    border-radius: 100px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* File List */
+#file-list-section{
+     grid-area: 1/2/4/5;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#file-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+#file-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1b1f22;
+}
+#file-list li button{
+    margin-top: auto;
+}
+
+/* Dropdown (sort-options) styling */
+#sort-options {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #1b1f22;
+    border: 2px solid #1b1f22;
+    color: white;
+    cursor: pointer;
+}
+
+#sort-options:focus {
+    outline: none;
+}
+
+/* Overlay Sidebar */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #97a2a6;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.close-btn {
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+#overlay-sidebar-contents {
+    padding: 40px;
+}
+
+#file-preview-text {
+    gap:10px;
+}
+
+#file-preview {
+    border: none;
+    border-radius:10px;
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+}
+
+#file-preview-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.danger {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+}
+
+/*Storage Bar*/
+#storage{
+    gap:10px;
+}
+#storage-bar-container {
+    width: 100%;
+    background-color: #a7b2b6;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+#storage-bar {
+    height: 20px;
+    font-size: 14px;
+    width: 0%;
+    padding:5px;
+    background-color: #1b1f22;
+    text-align: center;
+    line-height: auto;
+    color: white;
+    border-radius: 25px;
+    transition: width 0.3s ease-in-out;
+}
+
+#logoutLink{
+    cursor: pointer;
+}
+
+#logoutLink:hover{
+    text-decoration: underline;
+}
+
+/*Search Bar*/
+#search-input {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background: transparent;
+    border: 2px solid #1b1f22;
+    border-radius: 10px;
+    margin-left: auto;
+}
+
+/*Setting Page*/
+#user-info{
+    gap:10px;
+}
+
+#user-settings{
+    grid-area:1/2/3/4 ;
+}
+
+#account-management{
+    border-radius: 10px;
+    background-color: #1b1f22;
+    gap:10px;
+}
+
+#password-reset{
+    border-radius: 10px;
+    background-color: #1b1f22;
+    gap:10px;
+}
+
+#app-info{
+    grid-area: 1/1/4/2;
+    background-color: #97a2a6;
+    align-items: center;
+}
+
+#app-info p{
+    text-align: center;
+}
+
+#logo2{
+    width:100%;
+    height: auto;
+}
+
+/*Auth Page*/
+#auth-forms{
+    align-items: center;
+    text-align: center;
+    grid-area: 1/2/4/4;
+}
+#login-form{
+    background-color: #1b1f22;
+    border-radius: 10px;
+}
+
+#register-form{
+    background-color: #1b1f22;
+    border-radius: 10px;
+}

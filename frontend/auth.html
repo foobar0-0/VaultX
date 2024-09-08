@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to VaultX</title>
+    <link rel="icon" type="image/x-icon" href="assets/vaultx logo (1).ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="auth-forms" class="vertical sections">
+            <div class="vertical" id="appname">
+                <img id="logo" src="assets/vaultx logo.svg"/>
+                <h1 id="title">VaultX</h1>
+            </div>
+            <!-- Authentication Section -->
+            <div id="auth-section" class="vertical">
+                <h2>Login / Register</h2>
+
+                <!-- Login Form -->
+                <div id="login-form" class="vertical sections">
+                    <input type="text" id="login-username" placeholder="Username" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <button id="login-btn" onclick="login()">Login</button>
+                </div>
+
+                <!-- Registration Form -->
+                <div id="register-form" class="vertical sections" style="display: none;">
+                    <input type="email" id="register-email" placeholder="Email" required>
+                    <input type="text" id="register-username" placeholder="Username" required>
+                    <input type="password" id="register-password" placeholder="Password" required>
+                    <button id="register-btn" onclick="register()">Register</button>
+                </div>
+
+                <!-- Toggle between login and register -->
+                <p id="toggle-message" onclick="toggleForms()">Don't have an account? Register here</p>
+
+                <!-- Error Message -->
+                <div id="error-message" style="color: red; display: none;">Invalid credentials</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+
+</html>

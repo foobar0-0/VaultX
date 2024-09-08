@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaultX</title>
+    <link rel="icon" type="image/x-icon" href="assets/vaultx logo (1).ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="sections vertical">
+            <div class="horizontal" id="appname">
+                <img id="logo" src="assets/vaultx logo.svg"/>
+                <h2 id="title">VaultX</h2>
+            </div>
+            <!-- File Upload Section -->
+            <div class="sections vertical" id="file-section">
+                <label for="file-input">
+                    <img src="assets/icons8-upload-to-cloud-100.png" />
+                </label>
+                <input type="file" id="file-input" value="" title="&nbsp;">
+                <button id="upload-btn" class="primary" onclick="uploadFile()">Upload File</button>
+                <button id="cancel-btn" class="primary" style="display: none;" onclick="cancelUpload()">Cancel
+                    Upload</button>
+                <div id="progress-container" style="display:none;">
+                    <div id="progress-bar" style="width: 0%;">0%</div>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="vertical sections" id="info">
+            <div class="vertical" id="storage">
+                <h2>Storage Used</h2>
+                <div id="storage-bar-container">
+                    <div id="storage-bar" style="width: 0%;"></div>
+                </div>
+                <p id="storage-number">0%</p>
+            </div>
+            <ul id="nav">
+                <li><a href="settings.html">Settings</a></li>
+                <li><p id="logoutLink">Log Out</p></li>
+            </ul>
+        </div>
+
+        <!-- Overlay Sidebar -->
+        <div id="overlay-sidebar" class="overlay vertical">
+            <div id="overlay-sidebar-contents" class="vertical">
+                <span class="close-btn" onclick="closeOverlay()">&times;</span>
+                <div class="vertical" id="file-preview-text">
+                    <h2 id="file-name"></h2>
+                    <p id="file-details"></p>
+                </div>
+                <iframe id="file-preview" frameborder="0" src="" allowfullscreen></iframe>
+                <div id="file-preview-btns" class="vertical">
+                    <button id="download-btn" class="primary">Download</button>
+                    <button id="delete-btn" class="danger" onclick="deleteFile()">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Uploaded File List -->
+        <div class="sections vertical" id="file-list-section">
+            <div class="horizontal" id="file-list-header">
+                <h1>Your Vault</h1>
+                <input type="text" id="search-input" placeholder="Search files..." oninput="filterFiles()">
+                <select id="sort-options" onchange="sortFiles()">
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                    <option value="date-asc">Date (Oldest First)</option>
+                    <option value="date-desc">Date (Newest First)</option>
+                </select>
+            </div>
+            <ul id="file-list"></ul>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

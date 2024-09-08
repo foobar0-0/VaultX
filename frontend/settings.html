@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="icon" type="image/x-icon" href="assets/vaultx logo (1).ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container ">
+        <div id="app-info" class="vertical sections">
+            <img id="logo2" src="assets/vaultx logo.svg"/>
+                <h2 id="title">VaultX</h2>
+                <p>Version: 1.0.0<br />Developed by Sneha Sankhla</p>
+        </div>
+        <div id="user-settings" class=" sections vertical">
+            <h1>User Settings</h1>
+            <div id="user-info" class="vertical">
+                <p><strong>Username:</strong> <span id="username">JohnDoe</span></p>
+                <p><strong>Email:</strong> <span id="email">johndoe@example.com</span></p>
+            </div>
+            <div id="settings" class="horizontal">
+                <!-- Account Management Section -->
+                <div id="account-management" class=" vertical sections">
+                    <h2>Account Management</h2>
+                    <button id="logout-btn" onclick="logout()">Logout</button>
+                    <button id="delete-account-btn" onclick="deleteAccount()">Delete Account</button>
+                </div>
+                <!-- Password Reset Section -->
+                <div id="password-reset" class=" vertical sections">
+                    <h2>Reset Password</h2>
+                    <input type="password" id="current-password" placeholder="Current Password" required>
+                    <input type="password" id="new-password" placeholder="New Password" required>
+                    <button id="reset-password-btn" onclick="resetPassword()">Reset Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+
+</html>
